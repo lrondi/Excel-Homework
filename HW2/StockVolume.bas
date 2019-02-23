@@ -74,23 +74,23 @@ For Each ws In Worksheets
     ws.Range("N4").Value = "Greatest Total Volume"
     ws.Range("O1").Value = "Ticker"
     ws.Range("P1").Value = "Value"
+    lastTickerRow = ws.Cells(Rows.Count, 9).End(xlUp).row
     
     'max % Increase
-    maxIncrease = WorksheetFunction.Max(ws.Range("K1:K8000"))
+    maxIncrease = WorksheetFunction.Max(ws.Range("K1:K" & lastTickerRow))
     ws.Range("P2").Value = maxIncrease
     ws.Range("P2").NumberFormat = "0.00%"
 
     'min % Increase
-    minIncrease = WorksheetFunction.Min(ws.Range("K1:K8000"))
+    minIncrease = WorksheetFunction.Min(ws.Range("K1:K" & lastTickerRow))
     ws.Range("P3").Value = minIncrease
     ws.Range("P3").NumberFormat = "0.00%"
     
     'max Volume
-    maxVolume = WorksheetFunction.Max(ws.Range("L1:L8000"))
+    maxVolume = WorksheetFunction.Max(ws.Range("L1:L" & lastTickerRow))
     ws.Range("P4").Value = maxVolume
 
     'search for ticker name for each value
-    lastTickerRow = ws.Cells(Rows.Count, 9).End(xlUp).row
     For i = 2 To lastTickerRow
         If ws.Cells(i, 12).Value = maxVolume Then
             Ticker = ws.Cells(i, 9).Value
