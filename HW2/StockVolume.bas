@@ -30,10 +30,8 @@ For Each ws In Worksheets
             ws.Cells(row + 1, 9).Value = ws.Cells(i, 1).Value
             row = row + 1
             
-                'some stocks have an open value of 0 for many months, so it's no use calculating yearly change in those cases
-                If i > 2 And openValue <> 0 Then
-                
-                    'calculation of closing value, yearly change and percent change from previous ticker
+                'calculation of closing value, yearly change and percent change from previous ticker
+                If i > 2 Then
                     closeValue = ws.Cells(i - 1, 6).Value
                     yearlyChange = closeValue - openValue
                     ws.Cells(row - 1, 10).Value = yearlyChange
