@@ -56,7 +56,7 @@ For Each ws In Worksheets
                         If ws.Cells(i + j, 1).Value = ws.Cells(i, 1).Value Then
                             openValue = ws.Cells(i + j, 3).Value
                         'if Ticker name is diff, it means present Ticker has open value of 0 through all year, so take last zero value as open value
-                        ElseIf ws.Cells(i + j, 1).Value <> ws.Cells(i, 1).Value Then
+                        Else
                             openValue = ws.Cells(i + j - 1, 3).Value
                         End If
                         Exit For
