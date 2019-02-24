@@ -103,12 +103,10 @@ For Each ws In Worksheets
         If ws.Cells(i, 12).Value = maxVolume Then
             Ticker = ws.Cells(i, 9).Value
             ws.Range("O4").Value = Ticker
-        End If
-        If ws.Cells(i, 11).Value = maxIncrease Then
+        ElseIf ws.Cells(i, 11).Value = maxIncrease Then
             Ticker = ws.Cells(i, 9).Value
             ws.Range("O2").Value = Ticker
-        End If
-        If ws.Cells(i, 11).Value = minIncrease Then
+        ElseIf ws.Cells(i, 11).Value = minIncrease Then
             Ticker = ws.Cells(i, 9).Value
             ws.Range("O3").Value = Ticker
         End If
