@@ -1,5 +1,0 @@
-Script runs in under 40 sec
-
-There are two exceptional cases in the data: NLPT stock in 2014 and 2015. Through all 2014, stock value is zero, volume is zero. In 2015, 
-it's zero for some months and then changes. The new changes I did to the script are for taking care of this 2 special cases, otherwise 
-the minimium % increase in 2014 is NLPT with -100%, which is not correct.
